@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load data
-df = pd.read_csv("data/listings.csv")
+df = pd.read_csv("listings.csv")
 
 # Clean price
 df['price'] = df['price'].replace(r'[\$,]', '', regex=True)
