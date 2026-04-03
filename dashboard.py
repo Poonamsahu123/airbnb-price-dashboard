@@ -1,8 +1,13 @@
 import streamlit as st
 import pandas as pd
+import os   
 
 # Load data
-df = pd.read_csv("listings.csv")
+# Load data
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(BASE_DIR, "listings.csv")
+
+df = pd.read_csv(file_path)
 
 # Clean price
 df['price'] = df['price'].replace(r'[\$,]', '', regex=True)
